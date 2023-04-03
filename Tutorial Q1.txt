@@ -103,5 +103,6 @@ else{
 		previous=previous.next;
 	Node<E> remove=previous.next;
 	previous.next=remove.next;
+	size--;
 	return remove.element;
 }
