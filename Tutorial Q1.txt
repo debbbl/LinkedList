@@ -1,0 +1,126 @@
+a.
+Node<E> node1=new Node<E>('a');
+Node<E> node2=new Node<E>('z');
+Node<E> head=node1;
+Node<E> tail=node2;
+
+b. 
+head -> node1 -> node2 <- tail
+
+c.
+Node<E> node2=node1.next;
+
+d.
+Node<E> firstNode=new Node<E>();
+firstNode.next=head;
+head=firstnode;
+size++
+
+head -> firstNode -> node1 -> node2 <- tail
+
+e.
+if the list is empty,we can assign head and tail to firstNode
+if the list is not empty, we need to make firstNode the new head, update the next of firstNode to the previous head
+
+f./g.
+Node<E> firstNode=new Node<E> ;
+firstNode.next=head;
+head=firstNode;
+size++;
+if(tail==null){
+	tail=head;
+}
+
+h.
+(i) addLast()
+Node<E> newNode=new Node<>('c');
+if(tail==null){
+	head=newNode;
+	tail=newNode;
+}else{
+	tail.next=newNode;
+	tail=newNode;
+}
+size++;
+
+(ii) add(int index, E e)
+Node<E> newNode=new Node<>('d');
+if(index==0)
+	addFirst();
+else if(index >= size)
+	addLast();
+else{
+	Node<E> current=head;
+	for(int i=1;i<index;i++)
+		current=current.next
+	Node<E> temp=current.next;
+	current.next=newNode;
+	(current.next).next=temp;
+}
+
+(iii) removeFirst()
+if(size==0)
+	return null;
+else{
+	Node<E> temp=head;
+	head=head.next;
+	size--;
+	if(head=null)
+		tail=null;
+	return temp.element;
+}
+
+(iv) removeLast()
+if(size==0)
+	return null;
+else if(size==1){
+	Node<E> temp=head;
+	head=null;
+	tail=null;
+	size=0;
+	return temp.element;
+}else{
+	Node<E> current=head;
+	for(int i=0;i<size-2;i++)
+		current=current.next;
+	Node<E> temp=tail;
+	tail=current;
+	tail.next=null;
+	size--;
+	return temp.element;
+}
+
+(v) remove(int index)
+if(size==0)
+	return null;
+else if(size=0)
+	removeFirst();
+else if(indez=size-1)
+	removeLast();
+else{
+	Node<E> previous=head;
+	for(int i=1;i<index;i++)
+		previous=previous.next;
+	Node<E> remove=previous.next;
+	previous.next=remove.next;
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
