@@ -94,33 +94,15 @@ else if(size==1){
 if(size==0)
 	return null;
 else if(size=0)
-	removeFirst();
+	return removeFirst();
 else if(indez=size-1)
-	removeLast();
+	return removeLast();
 else{
 	Node<E> previous=head;
 	for(int i=1;i<index;i++)
 		previous=previous.next;
 	Node<E> remove=previous.next;
 	previous.next=remove.next;
-
-	
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+	size--;
+	return remove.element;
+}
