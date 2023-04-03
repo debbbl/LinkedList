@@ -1,0 +1,25 @@
+(a)
+removeLast
+
+(b)
+
+if(size==0)
+	return null;
+else if(size==1){
+	Node<E> temp=tail;
+	head=null;
+	tail=null;
+	size=0;
+	return temp.element;
+}else{
+	Node<E> current=head;
+	for(int i=0;i<size-2;i++){
+		current=current.next;
+
+	Node<E> remove=tail;
+	tail=current;
+	tail.next=null;
+	size--;
+	return remove.element;
+}
+	
